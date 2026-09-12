@@ -1,31 +1,19 @@
-import EventList from "./components/events/EventList";
-import { events } from "./data/events";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="mx-auto px-6 py-16 bg-slate-950 text-white">
-      <section className="mx-auto max-w-5xl px-6 py-24">
-        <p className="text-sm uppercase tracking-[0.2em] text-indigo-300">
-          Практическая работа №11
+    <main className="mx-auto max-w-6xl h-screen px-6 py-20 flex flex-col justify-center">
+        <p className="text-sm font-semibold text-indigo-600">EventFlow</p>
+        <h1 className="mt-3 text-5xl font-bold">События в одном месте</h1>
+        <p className="mt-5 max-w-2xl text-lg text-slate-600">
+        Просматривайте ближайшие мероприятия и сохраняйте интересные события.
         </p>
-        <h1 className="mt-4 text-4xl font-bold">EventFlow</h1>
-        <p className="mt-5 max-w-2xl text-lg text-slate-300">
-          Проект Next.js создан и готов к дальнейшей разработке.
-        </p>
-      </section>
-      <section id="about">
-        <p className="text-sm uppercase tracking-[0.2em] text-indigo-300">
-          Практическая работа №12
-        </p>
-        <h1 className="mt-4 text-5xl font-bold">
-          Городские события
-        </h1>
-        <p className="mt-5 max-w-2xl text-slate-300">
-          Выбирайте встречи, лецкии и мероприятия
-          на ближайшую неделю.
-        </p>
-      </section>
-      <EventList items={events}/>
+
+        <Link
+          href="/events"
+          className="mt-8 inline-block rounded-lg bg-slate-950 w-fit px-5 py-3 text-white">
+        Смотреть события
+        </Link>
     </main>    
   );
 }
